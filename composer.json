@@ -32,7 +32,10 @@
   "autoload": {
     "psr-4": {
       "JobinjaTeam\\BladeLang\\": "src/"
-    }
+    },
+    "files": [
+      "src/funcs.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {

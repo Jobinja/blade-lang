@@ -19,20 +19,28 @@ class JobinjaBladeLangServiceProvider extends ServiceProvider
         /** @var BladeCompiler $compilerInstance */
         $compilerInstance = $this->app['blade.compiler'];
 
-        $compilerInstance->directive('lang', function ($expression) {
-            return "<?php if({$expression} === \App:getLocale()): ?>";
+        $compilerInstance->directive('iflang', function ($expression) {
+            return "<?php if({$expression} === \App::getLocale()): ?>";
         });
 
-        $compilerInstance->directive('elseLang', function ($expression) {
+        $compilerInstance->directive('elselang', function ($expression) {
             return "<?php elseif({$expression} === \App::getLocale()): ?>";
         });
 
-        $compilerInstance->directive('fallbackLang', function () {
+        $compilerInstance->directive('fallbacklang', function () {
             return "<?php else: ?>";
         });
 
-        $compilerInstance->directive('endLang', function () {
+        $compilerInstance->directive('closelang', function () {
             return '<?php endif; ?>';
+        });
+
+        $compilerInstance->directive('format_number', function($expression) {
+            return "<?php e(multilang_format_number{$expression}); ?>";
+        });
+
+        $compilerInstance->directive('convert_number', function ($expression) {
+            return "<?php e(multilang_convert_number{$expression}); ?>";
         });
     }
 
