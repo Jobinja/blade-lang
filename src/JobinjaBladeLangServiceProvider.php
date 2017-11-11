@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-class JobinjaBladeMacroServiceProvider extends ServiceProvider
+class JobinjaBladeLangServiceProvider extends ServiceProvider
 {
     /**
      * Boot method
