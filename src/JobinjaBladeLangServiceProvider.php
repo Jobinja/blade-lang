@@ -35,11 +35,11 @@ class JobinjaBladeLangServiceProvider extends ServiceProvider
             return '<?php endif; ?>';
         });
 
-        $compilerInstance->directive('format_number', function($expression) {
+        $compilerInstance->directive('formatnumber', function($expression) {
             return "<?php echo e(multilang_format_number{$expression}); ?>";
         });
 
-        $compilerInstance->directive('convert_number', function ($expression) {
+        $compilerInstance->directive('convertnumber', function ($expression) {
             return "<?php echo e(multilang_convert_number{$expression}); ?>";
         });
     }
