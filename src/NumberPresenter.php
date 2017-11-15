@@ -45,11 +45,11 @@ class NumberPresenter
             $thousandsSep = array_key_exists($locale, static::$thousandSeps) ? static::$thousandSeps[$locale] : ',';
         }
 
-        return number_format(
-            static::present($number, $locale),
+        return static::present(number_format(
+            (float) $number,
             $decimals,
             $decPoint,
             $thousandsSep
-        );
+        ), $locale);
     }
 }
